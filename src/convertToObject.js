@@ -13,7 +13,7 @@ function convertToObject(sourceString) {
   return sourceString
     .split(';')
     .map((rule) => rule.trim())
-    .filter((rule) => rule.length > 0)
+    .filter((rule) => rule.length > 0 && rule.includes(':'))
     .reduce((stylesMap, rule) => {
       const separatorIndex = rule.indexOf(':');
       const property = rule.slice(0, separatorIndex).trim();
